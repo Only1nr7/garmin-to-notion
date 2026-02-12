@@ -32,7 +32,7 @@ ACTIVITY_ICONS = {
 }
 
 
-def get_all_activities(garmin_client: GarminClient, limit: int = 1000) -> list[dict]:
+def get_all_activities(garmin_client: GarminClient, limit: int = 5000) -> list[dict]: #LS 12-02-2026 handmatig aangepast van 1000 naar 5000 ivm error.
     return garmin_client.get_activities(0, limit)
 
 
