@@ -32,7 +32,7 @@ ACTIVITY_ICONS = {
 }
 
 
-def get_all_activities(garmin_client: GarminClient, limit: int = 5000) -> list[dict]: #LS 12-02-2026 handmatig aangepast van 1000 naar 5000 ivm error.
+def get_all_activities(garmin_client: GarminClient, limit: int = 5000) -> list[dict]:
     return garmin_client.get_activities(0, limit)
 
 
@@ -294,7 +294,7 @@ def main():
     garmin_password = os.getenv("GARMIN_PASSWORD")
     notion_token = os.getenv("NOTION_TOKEN")
     database_id = os.getenv("NOTION_DB_ID")
-    garmin_fetch_limit = int(os.getenv("GARMIN_ACTIVITIES_FETCH_LIMIT", "5000")) #LS 12-02-2026 handmatig aangepast van 1000 naar 5000 ivm error.
+    garmin_fetch_limit = int(os.getenv("GARMIN_ACTIVITIES_FETCH_LIMIT", "5000"))
 
     # Initialize Garmin client and login
     garmin_client = GarminClient(garmin_email, garmin_password)
